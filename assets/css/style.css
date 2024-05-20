@@ -2327,3 +2327,147 @@ textarea.input-field {
     left: 0;
   }
 }
+
+/**
+*Card Crousal
+*/
+
+.bodyy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 35px;
+  background: black;
+}
+
+.wrapper1,
+.wrapper_floor,
+.wrapper_generation,
+.wrapper_catering {
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+  padding: 40px;
+}
+
+.wrapper1 i,
+.wrapper_floor i,
+.wrapper_generation i,
+.wrapper_catering i {
+  height: 50px;
+  width: 50px;
+  background: var(--gold-crayola);
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  font-size: 1.25 rem;
+  transform: translateY(-50%);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.wrapper1 i:first-child,
+.wrapper_floor i:first-child,
+.wrapper_generation i:first-child,
+.wrapper_catering i:first-child {
+  left: -22px;
+}
+
+.wrapper1 i:last-child,
+.wrapper_floor i:last-child,
+.wrapper_generation i:last-child,
+.wrapper_catering i:last-child {
+  right: -22px;
+}
+
+.wrapper1 .carousel,
+.wrapper_floor .carousel_floor,
+.wrapper_generation .carousel_generation,
+.wrapper_catering .carousel_catering {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: 0;
+}
+
+.carousel::-webkit-scrollbar,
+.carousel_floor::-webkit-scrollbar,
+.carousel_generation::-webkit-scrollbar,
+.carousel_catering::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel :where(.card1, .img),
+.carousel_floor:where(.card1_floor, .img),
+.carousel_generation:where(.card1_generation, .img)
+  .carousel_catering:where(.card1_catering, .img) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel.dragging,
+.carousel_floor.dragging,
+.carousel_generation.dragging,
+.carousel_catering.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.carousel.no-transition,
+.carousel_floor.no-transition,
+.carousel_generation.no-transition,
+.carousel_catering.no-transition {
+  scroll-behavior: auto;
+}
+
+.carousel.dragging .card1,
+.carousel_floor.dragging .card1_floor,
+.carousel_generation.dragging .card1_generation,
+.carousel_catering.dragging .card1_catering {
+  cursor: grab;
+  user-select: none;
+}
+
+.carousel .card1,
+.carousel_floor .card1_floor,
+.carousel_generation .card1_generation,
+.carousel_catering .card1_catering {
+  scroll-snap-align: start;
+  height: 340px;
+  list-style: none;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  cursor: pointer;
+  width: 98%;
+  padding-bottom: 15px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper1 .carousel,
+  .wrapper_floor .carousel_floor,
+  .wrapper_generation .carousel_generation,
+  .wrapper_catering .carousel_catering {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper1 .carousel,
+  .wrapper_floor .carousel_floor,
+  .wrapper_generation .carousel_generation,
+  .wrapper_catering .carousel_catering {
+    grid-auto-columns: 100%;
+  }
+}

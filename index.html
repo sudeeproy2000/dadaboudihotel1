@@ -21,6 +21,13 @@
       type="image/svg+xml"
     />
 
+    <!--Font-->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
     <!-- 
     - google font link
   -->
@@ -30,6 +37,16 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap"
       rel="stylesheet"
     />
+
+    <!--Tailwind CSS-->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!--
+      Swiper Css
+    -->
+
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
 
     <!-- 
     - custom css link
@@ -58,7 +75,10 @@
     - #TOP BAR
   -->
 
-    <div class="topbar">
+    <div
+      class="topbar"
+      style="background-color: white; color: black; margin-bottom: 0"
+    >
       <div class="container">
         <address class="topbar-item">
           <div class="icon">
@@ -104,8 +124,12 @@
     - #HEADER
   -->
 
-    <header class="header" data-header>
-      <div class="container">
+    <header
+      class="header"
+      style="background-color: white; color: black; padding: 0; margin-top: 0"
+      data-header
+    >
+      <div class="container" id="root">
         <a href="#" class="logo">
           <img
             src="./assets/images/dadaboudi-logo.png"
@@ -115,7 +139,7 @@
           />
         </a>
 
-        <nav class="navbar" data-navbar>
+        <nav class="navbar" id="main-nav" class="side-bar" data-navbar>
           <button class="close-btn" aria-label="close menu" data-nav-toggler>
             <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
           </button>
@@ -131,7 +155,11 @@
 
           <ul class="navbar-list">
             <li class="navbar-item">
-              <a href="#home" class="navbar-link hover-underline active">
+              <a
+                href="/"
+                class="navbar-link hover-underline active"
+                onclick="route()"
+              >
                 <div class="separator"></div>
 
                 <span class="span">Home</span>
@@ -139,7 +167,11 @@
             </li>
 
             <li class="navbar-item">
-              <a href="#menu" class="navbar-link hover-underline">
+              <a
+                href="/menu"
+                class="navbar-link hover-underline"
+                onclick="route()"
+              >
                 <div class="separator"></div>
 
                 <span class="span">Menus</span>
@@ -321,6 +353,74 @@
                 >
               </a>
             </li>
+
+            <li class="slider-item active" data-hero-slider-item>
+              <div class="slider-bg">
+                <img
+                  src="./assets/images/hero-slider-4.jpg"
+                  width="1880"
+                  height="950"
+                  alt=""
+                  class="img-cover"
+                />
+              </div>
+
+              <p class="label-2 section-subtitle slider-reveal">
+                Authentic Kolkata Style Biryani
+              </p>
+
+              <h1 class="display-1 hero-title slider-reveal">
+                For the love of <br />
+                Mutton Biriyani
+              </h1>
+
+              <p class="body-2 hero-text slider-reveal">
+                Come with family & feel the joy of Kolkata's one of the Best
+                Biriyani
+              </p>
+
+              <a href="#" class="btn btn-primary slider-reveal">
+                <span class="text text-1">View Our Menu</span>
+
+                <span class="text text-2" aria-hidden="true"
+                  >View Our Menu</span
+                >
+              </a>
+            </li>
+
+            <li class="slider-item active" data-hero-slider-item>
+              <div class="slider-bg">
+                <img
+                  src="./assets/images/hero-slider-5.jpg"
+                  width="1880"
+                  height="950"
+                  alt=""
+                  class="img-cover"
+                />
+              </div>
+
+              <p class="label-2 section-subtitle slider-reveal">
+                Authentic Kolkata Style Biryani
+              </p>
+
+              <h1 class="display-1 hero-title slider-reveal">
+                For the love of <br />
+                Mutton Biriyani
+              </h1>
+
+              <p class="body-2 hero-text slider-reveal">
+                Come with family & feel the joy of Kolkata's one of the Best
+                Biriyani
+              </p>
+
+              <a href="#" class="btn btn-primary slider-reveal">
+                <span class="text text-1">View Our Menu</span>
+
+                <span class="text text-2" aria-hidden="true"
+                  >View Our Menu</span
+                >
+              </a>
+            </li>
           </ul>
 
           <button
@@ -351,535 +451,305 @@
           </a>
         </section>
 
-        <!-- 
-        - #SERVICE
-      -->
+        <!--Best Seller-->
 
-        <section
-          class="section service bg-black-10 text-center"
-          aria-label="service"
-        >
-          <div class="container">
-            <p class="section-subtitle label-2">Flavors Of Dada Boudi</p>
+        <section class="section features text-center" aria-label="features">
+          <div class="containerWrapper">
+            <p class="section-subtitle label-2">Best Seller Items</p>
 
-            <h2 class="headline-1 section-title">We Offer Top Class Food</h2>
+            <h2 class="headline-1 section-title">Our Best Seller</h2>
 
-            <p class="section-text">
-              We delight in serving delicious Kolkata style Biriyani along with
-              traditional Bengali Thali and other Chinese and Tandoor item
-            </p>
-
-            <ul class="grid-list">
-              <li>
-                <div class="service-card">
-                  <a href="#" class="has-before hover:shine">
-                    <figure
-                      class="card-banner img-holder"
-                      style="--width: 285; --height: 336"
-                    >
+            <div class="bodyy">
+              <div class="wrapper1">
+                <i id="left" class="fa-solid fas fa-angle-left"></i>
+                <ul class="carousel">
+                  <li class="card1">
+                    <div class="img">
                       <img
-                        src="./assets/images/service-1.jpg"
-                        width="285"
-                        height="336"
-                        loading="lazy"
-                        alt="Breakfast"
-                        class="img-cover"
+                        src="./assets/images/100.png"
+                        alt=""
+                        draggable="false"
                       />
-                    </figure>
-                  </a>
-
-                  <div class="card-content">
-                    <h3 class="title-4 card-title">
-                      <a href="#">Indian</a>
-                    </h3>
-
-                    <a href="#" class="btn-text hover-underline label-2"
-                      >View Menu</a
-                    >
-                  </div>
-                </div>
-              </li>
-
-              <li>
-                <div class="service-card">
-                  <a href="#" class="has-before hover:shine">
-                    <figure
-                      class="card-banner img-holder"
-                      style="--width: 285; --height: 336"
-                    >
+                    </div>
+                  </li>
+                  <li class="card1">
+                    <div class="img">
                       <img
-                        src="./assets/images/service-2.jpg"
-                        width="285"
-                        height="336"
-                        loading="lazy"
-                        alt="Appetizers"
-                        class="img-cover"
+                        src="./assets/images/100.png"
+                        alt=""
+                        draggable="false"
                       />
-                    </figure>
-                  </a>
-
-                  <div class="card-content">
-                    <h3 class="title-4 card-title">
-                      <a href="#">Chinese</a>
-                    </h3>
-
-                    <a href="#" class="btn-text hover-underline label-2"
-                      >View Menu</a
-                    >
-                  </div>
-                </div>
-              </li>
-
-              <li>
-                <div class="service-card">
-                  <a href="#" class="has-before hover:shine">
-                    <figure
-                      class="card-banner img-holder"
-                      style="--width: 285; --height: 336"
-                    >
+                    </div>
+                  </li>
+                  <li class="card1">
+                    <div class="img">
                       <img
-                        src="./assets/images/service-3.jpg"
-                        width="285"
-                        height="336"
-                        loading="lazy"
-                        alt="Drinks"
-                        class="img-cover"
+                        src="./assets/images/100.png"
+                        alt=""
+                        draggable="false"
                       />
-                    </figure>
-                  </a>
-
-                  <div class="card-content">
-                    <h3 class="title-4 card-title">
-                      <a href="#">Tandoor</a>
-                    </h3>
-
-                    <a href="#" class="btn-text hover-underline label-2"
-                      >View Menu</a
-                    >
-                  </div>
-                </div>
-              </li>
-            </ul>
-
-            <img
-              src="./assets/images/shape-1.png"
-              width="246"
-              height="412"
-              loading="lazy"
-              alt="shape"
-              class="shape shape-1 move-anim"
-            />
-            <img
-              src="./assets/images/shape-2.png"
-              width="343"
-              height="345"
-              loading="lazy"
-              alt="shape"
-              class="shape shape-2 move-anim"
-            />
-          </div>
-        </section>
-
-        <!-- 
-        - #ABOUT
-      -->
-
-        <section
-          class="section about text-center"
-          aria-labelledby="about-label"
-          id="about"
-        >
-          <div class="container">
-            <div class="about-content">
-              <p class="label-2 section-subtitle" id="about-label">Our Story</p>
-
-              <h2 class="headline-1 section-title">
-                Every corner of the wall has it's own story
-              </h2>
-
-              <p class="section-text">
-                Lorem Ipsum is simply dummy text of the printingand typesetting
-                industry lorem Ipsum has been the industrys standard dummy text
-                ever since the when an unknown printer took a galley of type and
-                scrambled it to make a type specimen book It has survived not
-                only five centuries, but also the leap into.
-              </p>
-
-              <div class="contact-label">Book Through Call</div>
-
-              <a
-                href="tel:+919831318010"
-                class="body-1 contact-number hover-underline"
-                >+91 9831318010</a
-              >
-
-              <a href="#" class="btn btn-primary">
-                <span class="text text-1">Read More</span>
-
-                <span class="text text-2" aria-hidden="true">Read More</span>
-              </a>
+                    </div>
+                  </li>
+                  <li class="card1">
+                    <div class="img">
+                      <img
+                        src="./assets/images/100.png"
+                        alt=""
+                        draggable="false"
+                      />
+                    </div>
+                  </li>
+                  <li class="card1">
+                    <div class="img">
+                      <img
+                        src="./assets/images/100.png"
+                        alt=""
+                        draggable="false"
+                      />
+                    </div>
+                  </li>
+                  <li class="card1">
+                    <div class="img">
+                      <img
+                        src="./assets/images/100.png"
+                        alt=""
+                        draggable="false"
+                      />
+                    </div>
+                  </li>
+                </ul>
+                <i id="right" class="fa-solid fas fa-angle-right"></i>
+              </div>
             </div>
 
-            <figure class="about-banner">
-              <img
-                src="./assets/images/about-banner.jpg"
-                width="570"
-                height="570"
-                loading="lazy"
-                alt="about banner"
-                class="w-100"
-                data-parallax-item
-                data-parallax-speed="1"
-              />
-
-              <div
-                class="abs-img abs-img-1 has-before"
-                data-parallax-item
-                data-parallax-speed="1.75"
-              >
-                <img
-                  src="./assets/images/about-abs-image.jpg"
-                  width="285"
-                  height="285"
-                  loading="lazy"
-                  alt=""
-                  class="w-100"
-                />
-              </div>
-
-              <div class="abs-img abs-img-2 has-before">
-                <img
-                  src="./assets/images/badge-2.png"
-                  width="133"
-                  height="134"
-                  loading="lazy"
-                  alt=""
-                />
-              </div>
-            </figure>
+            <img
+              src="./assets/images/shape-7.png"
+              width="208"
+              height="178"
+              loading="lazy"
+              alt="shape"
+              class="shape shape-1"
+            />
 
             <img
-              src="./assets/images/shape-3.png"
-              width="197"
-              height="194"
+              src="./assets/images/shape-8.png"
+              width="120"
+              height="115"
               loading="lazy"
-              alt=""
-              class="shape"
+              alt="shape"
+              class="shape shape-2"
             />
           </div>
         </section>
 
-        <!-- 
-        - #SPECIAL DISH
-      -->
+        <!--Floors & Lounges-->
 
-        <section class="special-dish text-center" aria-labelledby="dish-label">
-          <div class="special-dish-banner">
-            <img
-              src="./assets/images/special-dish-banner.jpg"
-              width="940"
-              height="900"
-              loading="lazy"
-              alt="special dish"
-              class="img-cover"
-            />
-          </div>
+        <section class="section features text-center" aria-label="features">
+          <div class="containerWrapper">
+            <p class="section-subtitle label-2">Dada Boudi Dine In</p>
 
-          <div class="special-dish-content bg-black-10">
-            <div class="container">
-              <img
-                src="./assets/images/badge-1.png"
-                width="28"
-                height="41"
-                loading="lazy"
-                alt="badge"
-                class="abs-img"
-              />
+            <h2 class="headline-1 section-title">Floors and Lounges</h2>
 
-              <p class="section-subtitle label-2">Special Dish</p>
-
-              <h2 class="headline-1 section-title">Mutton Biriyani</h2>
-
-              <p class="section-text">
-                Kolkata style mutton biriyani is the most significant item of
-                Dada Boudi Hotel.
-              </p>
-
-              <div class="wrapper">
-                <span class="span body-1">₹340.00</span>
+            <div class="bodyy">
+              <div class="wrapper_floor">
+                <i id="left" class="fa-solid fas fa-angle-left"></i>
+                <ul class="carousel_floor">
+                  <li class="card1_floor">
+                    <div class="img">
+                      <img
+                        src="./assets/images/lounge-1.png"
+                        alt=""
+                        draggable="false"
+                      />
+                    </div>
+                  </li>
+                  <li class="card1_floor">
+                    <div class="img">
+                      <img
+                        src="./assets/images/lounge-2.png"
+                        alt=""
+                        draggable="false"
+                      />
+                    </div>
+                  </li>
+                  <li class="card1_floor">
+                    <div class="img">
+                      <img
+                        src="./assets/images/lounge-3.png"
+                        alt=""
+                        draggable="false"
+                      />
+                    </div>
+                  </li>
+                  <li class="card1_floor">
+                    <div class="img">
+                      <img
+                        src="./assets/images/lounge-1.png"
+                        alt=""
+                        draggable="false"
+                      />
+                    </div>
+                  </li>
+                </ul>
+                <i id="right" class="fa-solid fas fa-angle-right"></i>
               </div>
-
-              <a href="#" class="btn btn-primary">
-                <span class="text text-1">View All Menu</span>
-
-                <span class="text text-2" aria-hidden="true"
-                  >View All Menu</span
-                >
-              </a>
             </div>
+
+            <img
+              src="./assets/images/shape-7.png"
+              width="208"
+              height="178"
+              loading="lazy"
+              alt="shape"
+              class="shape shape-1"
+            />
+
+            <img
+              src="./assets/images/shape-8.png"
+              width="120"
+              height="115"
+              loading="lazy"
+              alt="shape"
+              class="shape shape-2"
+            />
           </div>
-
-          <img
-            src="./assets/images/shape-4.png"
-            width="179"
-            height="359"
-            loading="lazy"
-            alt=""
-            class="shape shape-1"
-          />
-
-          <img
-            src="./assets/images/shape-9.png"
-            width="351"
-            height="462"
-            loading="lazy"
-            alt=""
-            class="shape shape-2"
-          />
         </section>
 
-        <!-- 
-        - #MENU
-      -->
+        <!--Catering Service Bulk Party Booking Banquet Booking-->
 
-        <section class="section menu" aria-label="menu-label" id="menu">
-          <div class="container">
-            <p class="section-subtitle text-center label-2">Delicious Menu</p>
+        <section class="section features text-center" aria-label="features">
+          <div class="containerWrapper">
+            <p class="section-subtitle label-2">Dada Boudi Bulk Booking</p>
 
-            <h2 class="headline-1 section-title text-center">Our Menu</h2>
+            <h2 class="headline-1 section-title">
+              Catering Service - Bulk Party Booking - Banquet Booking
+            </h2>
 
-            <ul class="grid-list">
-              <li>
-                <div class="menu-card hover:card">
-                  <figure
-                    class="card-banner img-holder"
-                    style="--width: 100; --height: 100"
-                  >
-                    <img
-                      src="./assets/images/menu-1.png"
-                      width="100"
-                      height="100"
-                      loading="lazy"
-                      alt="Greek Salad"
-                      class="img-cover"
-                    />
-                  </figure>
-
-                  <div>
-                    <div class="title-wrapper">
-                      <h3 class="title-3">
-                        <a href="#" class="card-title">Mutton Biriyani</a>
-                      </h3>
-
-                      <span class="badge label-1">Best Seller</span>
-
-                      <span class="span title-2">₹320</span>
+            <div class="bodyy">
+              <div class="wrapper_catering">
+                <i id="left" class="fa-solid fas fa-angle-left"></i>
+                <ul class="carousel_catering">
+                  <li class="card1_catering">
+                    <div class="img">
+                      <img
+                        src="./assets/images/lounge-1.png"
+                        alt=""
+                        draggable="false"
+                      />
                     </div>
-
-                    <p class="card-text label-1">
-                      Tomatoes, green bell pepper, sliced cucumber onion,
-                      olives, and feta cheese.
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li>
-                <div class="menu-card hover:card">
-                  <figure
-                    class="card-banner img-holder"
-                    style="--width: 100; --height: 100"
-                  >
-                    <img
-                      src="./assets/images/menu-2.png"
-                      width="100"
-                      height="100"
-                      loading="lazy"
-                      alt="Lasagne"
-                      class="img-cover"
-                    />
-                  </figure>
-
-                  <div>
-                    <div class="title-wrapper">
-                      <h3 class="title-3">
-                        <a href="#" class="card-title">Chicken Biriyani</a>
-                      </h3>
-
-                      <span class="span title-2">₹240</span>
+                  </li>
+                  <li class="card1_catering">
+                    <div class="img">
+                      <img
+                        src="./assets/images/lounge-2.png"
+                        alt=""
+                        draggable="false"
+                      />
                     </div>
-
-                    <p class="card-text label-1">
-                      Vegetables, cheeses, ground meats, tomato sauce,
-                      seasonings and spices
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li>
-                <div class="menu-card hover:card">
-                  <figure
-                    class="card-banner img-holder"
-                    style="--width: 100; --height: 100"
-                  >
-                    <img
-                      src="./assets/images/menu-3.png"
-                      width="100"
-                      height="100"
-                      loading="lazy"
-                      alt="Butternut Pumpkin"
-                      class="img-cover"
-                    />
-                  </figure>
-
-                  <div>
-                    <div class="title-wrapper">
-                      <h3 class="title-3">
-                        <a href="#" class="card-title"
-                          >Fish Fry (Kolkata Bhetki)</a
-                        >
-                      </h3>
-
-                      <span class="span title-2">₹140</span>
+                  </li>
+                  <li class="card1_catering">
+                    <div class="img">
+                      <img
+                        src="./assets/images/lounge-3.png"
+                        alt=""
+                        draggable="false"
+                      />
                     </div>
-
-                    <p class="card-text label-1">
-                      Typesetting industry lorem Lorem Ipsum is simply dummy
-                      text of the priand.
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li>
-                <div class="menu-card hover:card">
-                  <figure
-                    class="card-banner img-holder"
-                    style="--width: 100; --height: 100"
-                  >
-                    <img
-                      src="./assets/images/menu-4.png"
-                      width="100"
-                      height="100"
-                      loading="lazy"
-                      alt="Tokusen Wagyu"
-                      class="img-cover"
-                    />
-                  </figure>
-
-                  <div>
-                    <div class="title-wrapper">
-                      <h3 class="title-3">
-                        <a href="#" class="card-title">Firni</a>
-                      </h3>
-
-                      <span class="badge label-1">New</span>
-
-                      <span class="span title-2">₹140</span>
+                  </li>
+                  <li class="card1_catering">
+                    <div class="img">
+                      <img
+                        src="./assets/images/lounge-1.png"
+                        alt=""
+                        draggable="false"
+                      />
                     </div>
-
-                    <p class="card-text label-1">
-                      Vegetables, cheeses, ground meats, tomato sauce,
-                      seasonings and spices.
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li>
-                <div class="menu-card hover:card">
-                  <figure
-                    class="card-banner img-holder"
-                    style="--width: 100; --height: 100"
-                  >
-                    <img
-                      src="./assets/images/menu-5.png"
-                      width="100"
-                      height="100"
-                      loading="lazy"
-                      alt="Olivas Rellenas"
-                      class="img-cover"
-                    />
-                  </figure>
-
-                  <div>
-                    <div class="title-wrapper">
-                      <h3 class="title-3">
-                        <a href="#" class="card-title">Mutton Thali</a>
-                      </h3>
-
-                      <span class="span title-2">₹300</span>
-                    </div>
-
-                    <p class="card-text label-1">
-                      Avocados with crab meat, red onion, crab salad stuffed red
-                      bell pepper and green bell pepper.
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <li>
-                <div class="menu-card hover:card">
-                  <figure
-                    class="card-banner img-holder"
-                    style="--width: 100; --height: 100"
-                  >
-                    <img
-                      src="./assets/images/menu-6.png"
-                      width="100"
-                      height="100"
-                      loading="lazy"
-                      alt="Opu Fish"
-                      class="img-cover"
-                    />
-                  </figure>
-
-                  <div>
-                    <div class="title-wrapper">
-                      <h3 class="title-3">
-                        <a href="#" class="card-title">Chicken Reshmi Kabab</a>
-                      </h3>
-
-                      <span class="span title-2">₹170</span>
-                    </div>
-
-                    <p class="card-text label-1">
-                      Vegetables, cheeses, ground meats, tomato sauce,
-                      seasonings and spices
-                    </p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-
-            <p class="menu-text text-center">
-              Open from <span class="span">11:00 am</span> to
-              <span class="span">11:00 pm</span>
-            </p>
-
-            <a href="#" class="btn btn-primary">
-              <span class="text text-1">View All Menu</span>
-
-              <span class="text text-2" aria-hidden="true">View All Menu</span>
-            </a>
+                  </li>
+                </ul>
+                <i id="right" class="fa-solid fas fa-angle-right"></i>
+              </div>
+            </div>
 
             <img
-              src="./assets/images/shape-5.png"
-              width="921"
-              height="1036"
+              src="./assets/images/shape-7.png"
+              width="208"
+              height="178"
               loading="lazy"
               alt="shape"
-              class="shape shape-2 move-anim"
+              class="shape shape-1"
             />
+
             <img
-              src="./assets/images/shape-6.png"
-              width="343"
-              height="345"
+              src="./assets/images/shape-8.png"
+              width="120"
+              height="115"
               loading="lazy"
               alt="shape"
-              class="shape shape-3 move-anim"
+              class="shape shape-2"
+            />
+          </div>
+        </section>
+
+        <!--Generation Saga-->
+
+        <section class="section features text-center" aria-label="features">
+          <div class="containerWrapper">
+            <p class="section-subtitle label-2">Generations of Dada Boudi</p>
+
+            <h2 class="headline-1 section-title">Generation Saga</h2>
+
+            <div class="bodyy">
+              <div class="wrapper_generation">
+                <i id="left" class="fa-solid fas fa-angle-left"></i>
+                <ul class="carousel_generation">
+                  <li class="card1_generation">
+                    <div class="img">
+                      <img
+                        src="./assets/images/generation-1.png"
+                        alt=""
+                        draggable="false"
+                      />
+                    </div>
+                  </li>
+                  <li class="card1_generation">
+                    <div class="img">
+                      <img
+                        src="./assets/images/generation-2.png"
+                        alt=""
+                        draggable="false"
+                      />
+                    </div>
+                  </li>
+                  <li class="card1_generation">
+                    <div class="img">
+                      <img
+                        src="./assets/images/generation-3.png"
+                        alt=""
+                        draggable="false"
+                      />
+                    </div>
+                  </li>
+                </ul>
+                <i id="right" class="fa-solid fas fa-angle-right"></i>
+              </div>
+            </div>
+
+            <img
+              src="./assets/images/shape-7.png"
+              width="208"
+              height="178"
+              loading="lazy"
+              alt="shape"
+              class="shape shape-1"
+            />
+
+            <img
+              src="./assets/images/shape-8.png"
+              width="120"
+              height="115"
+              loading="lazy"
+              alt="shape"
+              class="shape shape-2"
             />
           </div>
         </section>
@@ -1547,6 +1417,12 @@
     >
       <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
     </a>
+
+    <!-- 
+    - custom js link
+  -->
+
+    <script src="./assets/js/swiper-bundle.min.js"></script>
 
     <!-- 
     - custom js link
