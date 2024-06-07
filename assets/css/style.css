@@ -923,9 +923,9 @@ body.nav-active {
   z-index: -1;
 }
 
-.hero .slider-item.active .slider-bg {
+/* .hero .slider-item.active .slider-bg {
   animation: smoothScale 7s linear forwards;
-}
+} */
 
 @keyframes smoothScale {
   0% {
@@ -2344,7 +2344,8 @@ textarea.input-field {
 .wrapper1,
 .wrapper_floor,
 .wrapper_generation,
-.wrapper_catering {
+.wrapper_catering,
+.wrapper_customer {
   max-width: 1100px;
   width: 100%;
   position: relative;
@@ -2354,7 +2355,8 @@ textarea.input-field {
 .wrapper1 i,
 .wrapper_floor i,
 .wrapper_generation i,
-.wrapper_catering i {
+.wrapper_catering i,
+.wrapper_customer i {
   height: 50px;
   width: 50px;
   background: var(--gold-crayola);
@@ -2372,21 +2374,24 @@ textarea.input-field {
 .wrapper1 i:first-child,
 .wrapper_floor i:first-child,
 .wrapper_generation i:first-child,
-.wrapper_catering i:first-child {
+.wrapper_catering i:first-child,
+.wrapper_customer i:first-child {
   left: -22px;
 }
 
 .wrapper1 i:last-child,
 .wrapper_floor i:last-child,
 .wrapper_generation i:last-child,
-.wrapper_catering i:last-child {
+.wrapper_catering i:last-child,
+.wrapper_customer i:last-child {
   right: -22px;
 }
 
 .wrapper1 .carousel,
 .wrapper_floor .carousel_floor,
 .wrapper_generation .carousel_generation,
-.wrapper_catering .carousel_catering {
+.wrapper_catering .carousel_catering,
+.wrapper_customer .carousel_customer {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: calc((100% / 3) - 12px);
@@ -2400,14 +2405,16 @@ textarea.input-field {
 .carousel::-webkit-scrollbar,
 .carousel_floor::-webkit-scrollbar,
 .carousel_generation::-webkit-scrollbar,
-.carousel_catering::-webkit-scrollbar {
+.carousel_catering::-webkit-scrollbar,
+.carousel_customer::-webkit-scrollbar {
   display: none;
 }
 
 .carousel :where(.card1, .img),
 .carousel_floor:where(.card1_floor, .img),
 .carousel_generation:where(.card1_generation, .img)
-  .carousel_catering:where(.card1_catering, .img) {
+  .carousel_catering:where(.card1_catering, .img),
+.carousel_customer:where(.card1_customer, .img) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2416,7 +2423,8 @@ textarea.input-field {
 .carousel.dragging,
 .carousel_floor.dragging,
 .carousel_generation.dragging,
-.carousel_catering.dragging {
+.carousel_catering.dragging,
+.carousel_customer.dragging {
   scroll-snap-type: none;
   scroll-behavior: auto;
 }
@@ -2424,14 +2432,16 @@ textarea.input-field {
 .carousel.no-transition,
 .carousel_floor.no-transition,
 .carousel_generation.no-transition,
-.carousel_catering.no-transition {
+.carousel_catering.no-transition,
+.carousel_customer.no-transition {
   scroll-behavior: auto;
 }
 
 .carousel.dragging .card1,
 .carousel_floor.dragging .card1_floor,
 .carousel_generation.dragging .card1_generation,
-.carousel_catering.dragging .card1_catering {
+.carousel_catering.dragging .card1_catering,
+.carousel_customer.dragging .card1_customer {
   cursor: grab;
   user-select: none;
 }
@@ -2439,9 +2449,10 @@ textarea.input-field {
 .carousel .card1,
 .carousel_floor .card1_floor,
 .carousel_generation .card1_generation,
-.carousel_catering .card1_catering {
+.carousel_catering .card1_catering,
+.carousel_customer .card1_customer {
   scroll-snap-align: start;
-  height: 340px;
+  height: 410px;
   list-style: none;
   background: #fff;
   border-radius: 8px;
@@ -2458,7 +2469,8 @@ textarea.input-field {
   .wrapper1 .carousel,
   .wrapper_floor .carousel_floor,
   .wrapper_generation .carousel_generation,
-  .wrapper_catering .carousel_catering {
+  .wrapper_catering .carousel_catering,
+  .wrapper_customer .carousel_customer {
     grid-auto-columns: calc((100% / 2) - 9px);
   }
 }
@@ -2467,7 +2479,8 @@ textarea.input-field {
   .wrapper1 .carousel,
   .wrapper_floor .carousel_floor,
   .wrapper_generation .carousel_generation,
-  .wrapper_catering .carousel_catering {
+  .wrapper_catering .carousel_catering,
+  .wrapper_customer .carousel_customer {
     grid-auto-columns: 100%;
   }
 }

@@ -1,6 +1,52 @@
 "use strict";
 
 /**
+ * Routes
+ */
+
+// app.js
+const rootDiv = document.getElementById("app");
+
+const routes = {
+  "/": "home.html",
+  "/about": "aboutus.html",
+  "/catering": "catering.html",
+  "/menu": "menu.html",
+};
+
+function navigate(event) {
+  event.preventDefault();
+  const path = event.target.getAttribute("href");
+  window.history.pushState({}, path, window.location.origin + path);
+  render();
+}
+
+async function render() {
+  const path = window.location.pathname;
+  const route = routes[path] || "404.html"; // Handle 404 with a fallback page
+  try {
+    const response = await fetch(route);
+    if (response.ok) {
+      const content = await response.text();
+      rootDiv.innerHTML = content;
+    } else {
+      rootDiv.innerHTML = "<h1>404 Not Found</h1>";
+    }
+  } catch (error) {
+    console.error("Error loading the page:", error);
+    rootDiv.innerHTML = "<h1>404 Not Found</h1>";
+  }
+}
+
+window.addEventListener("popstate", render);
+
+document.querySelectorAll("a[data-link]").forEach((link) => {
+  link.addEventListener("click", navigate);
+});
+
+window.addEventListener("load", render);
+
+/**
  * PRELOAD
  *
  * loading will be end after document is loaded
@@ -559,6 +605,93 @@ document.addEventListener("DOMContentLoaded", function () {
         btn.id === "left"
           ? -firstCardWidth_generation
           : firstCardWidth_generation;
+    });
+  });
+});
+
+// Customer
+
+document.addEventListener("DOMContentLoaded", function () {
+  const carousel_customer = document.querySelector(".carousel_customer");
+  const arrowBtns_customer = document.querySelectorAll(".wrapper_customer i");
+  const wrapper_customer = document.querySelector(".wrapper_customer");
+
+  const firstCard_customer = carousel_customer.querySelector(".card1_customer");
+  const firstCardWidth_customer = firstCard_customer.offsetWidth;
+
+  let isDragging = false,
+    startX,
+    startScrollLeft,
+    timeoutId;
+
+  const dragStart = (e) => {
+    isDragging = true;
+    carousel_customer.classList.add("dragging");
+    startX = e.pageX;
+    startScrollLeft = carousel_customer.scrollLeft;
+  };
+
+  const dragging = (e) => {
+    if (!isDragging) return;
+
+    // Calculate the new scroll position
+    const newScrollLeft = startScrollLeft - (e.pageX - startX);
+
+    // Check if the new scroll position exceeds
+    // the carousel boundaries
+    if (
+      newScrollLeft <= 0 ||
+      newScrollLeft >=
+        carousel_customer.scrollWidth - carousel_customer.offsetWidth
+    ) {
+      // If so, prevent further dragging
+      isDragging = false;
+      return;
+    }
+
+    // Otherwise, update the scroll position of the carousel
+    carousel_customer.scrollLeft = newScrollLeft;
+  };
+
+  const dragStop = () => {
+    isDragging = false;
+    carousel_customer.classList.remove("dragging");
+  };
+
+  const autoPlay = () => {
+    // Return if window is smaller than 800
+    if (window.innerWidth < 800) return;
+
+    // Calculate the total width of all cards
+    const totalCardWidth = carousel_customer.scrollWidth;
+
+    // Calculate the maximum scroll position
+    const maxScrollLeft = totalCardWidth - carousel_customer.offsetWidth;
+
+    // If the carousel is at the end, stop autoplay
+    if (carousel_customer.scrollLeft >= maxScrollLeft) return;
+
+    // Autoplay the carousel after every 2500ms
+    timeoutId = setTimeout(
+      () => (carousel_customer.scrollLeft += firstCardWidth_customer),
+      2500
+    );
+  };
+
+  carousel_customer.addEventListener("mousedown", dragStart);
+  carousel_customer.addEventListener("mousemove", dragging);
+  document.addEventListener("mouseup", dragStop);
+  wrapper_customer.addEventListener("mouseenter", () =>
+    clearTimeout(timeoutId)
+  );
+  wrapper_customer.addEventListener("mouseleave", autoPlay);
+
+  // Add event listeners for the arrow buttons to
+  // scroll the carousel left and right
+  arrowBtns_customer.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      carousel_customer.scrollLeft +=
+        btn.id === "left" ? -firstCardWidth_customer : firstCardWidth_customer;
     });
   });
 });
